@@ -1,0 +1,104 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  
+}
+
+/* サイドバー：左側に固定 */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 100px;
+  width: 200px;
+  background-color: #6096fa;
+  overflow-y: auto;
+}
+/* サイドバー内の文字を白色 */
+.sidebar a {
+  color: #ffffff;
+}
+.sidebar a:hover {
+  color: #f0f0f0;
+  text-decoration: underline;
+}
+
+/* メインコンテンツ：サイドバーの右側に配置 */
+.main {
+  margin-left: 200px;
+  padding: 10px;
+  border: 2px solid #6096fa;  
+  border-radius: 8px;
+  max-width: 900px;
+  margin: 100px auto 50px 220px;
+}
+
+h1, h2, h3 {
+  color: #333;
+}
+/* ルバートテニスクラブタイトル */
+h1.main_title {
+  text-align: center;
+  color: #0905f8;
+  margin-bottom: 10px;
+  background: #a8e063 ;
+  padding: 20px ;
+  border-radius: 5px;
+
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* 音符を左側に追加 */
+h1.main_title::before {
+  content: "🎵";
+}
+
+/* テニスラケットを右側に追加 */
+h1.main_title::after {
+  content: "🎾";
+}
+
+/* h2見出しに背景色を追加 */
+h2 {
+  background-color: #e3f2fd;  /* 薄い青色 */
+  padding: 15px 20px;
+  border-left: 5px solid #6096fa;
+  border-radius: 5px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+/* class="title" のh2は背景なし */
+h2.title {
+  background-color: transparent;
+  border-left: none;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  color: #0905f8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ========================================
+   レスポンシブ対応（スマホ・タブレット）
+   ======================================== */
+
+/* タブレット以下（768px以下） */
+@media screen and (max-width: 768px) {
+ 
+}
+
+/* スマホ（480px以下） */
+@media screen and (max-width: 480px) {
+
+}
