@@ -52,16 +52,18 @@ h1.main_title {
 /* 音符を左側に追加 */
 h1.main_title::before {
   content: "🎵";
+  margin-right: 8px;
 }
 
 /* テニスラケットを右側に追加 */
 h1.main_title::after {
   content: "🎾";
+  margin-left: 8px;
 }
 
 /* h2見出しに背景色を追加 */
 h2 {
-  background-color: #e3f2fd;  /* 薄い青色 */
+  background-color: #e3f2fd;  
   padding: 15px 20px;
   border-left: 5px solid #6096fa;
   border-radius: 5px;
@@ -89,16 +91,49 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Googleカレンダー（iframe）をコンテナ幅にフィットさせる */
+.main iframe {
+  display: block;  /*親要素（.main）の幅に沿って配置されるようにする。*/
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 4 / 3; /* 800x600 の比率 */
+  height: auto;       /* 幅に合わせて高さも調整 */
+}
+
 /* ========================================
    レスポンシブ対応（スマホ・タブレット）
    ======================================== */
 
 /* タブレット以下（768px以下） */
 @media screen and (max-width: 768px) {
- 
+  .sidebar {
+    position: sticky; /* スクロールしても上部に張り付く */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* コンテンツの下に潜らないように */
+  }
+  /* メインコンテンツ：サイドバーの右側に配置 */
+.main {
+  padding: 10px;
+  border: 2px solid #6096fa;  
+  border-radius: 8px;
+  max-width: 900px;
+  /* 左の余白（サイドバー用）をゼロにして中央寄せ */
+  margin: 16px auto;
+}
+
 }
 
 /* スマホ（480px以下） */
 @media screen and (max-width: 480px) {
-
+  /* モバイル時のみリンク文字サイズと余白を縮小 */
+  .sidebar a { font-size: 0.75rem; padding: 4px 6px; }
+}
+.sidebar a {
+  color: #ffffff;
+}
+.sidebar a:hover {
+  color: #f0f0f0;
+  text-decoration: underline;
 }
