@@ -3,36 +3,43 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  
+  background: #fafafa;
 }
 
-/* サイドバー：左側に固定 */
-.sidebar {
-  position: fixed;
-  left: 0;
-  top: 100px;
-  width: 200px;
+/* ページ上部ナビ（トップナビ） */
+.top-nav {
+  width: 100%;
   background-color: #6096fa;
-  overflow-y: auto;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
-/* サイドバー内の文字を白色 */
-.sidebar a {
+.top-nav ul {
+  margin: 0;
+  padding: 10px 12px;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  list-style: none;
+}
+.top-nav a {
   color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
 }
-.sidebar a:hover {
-  color: #f0f0f0;
-  text-decoration: underline;
-}
+.top-nav a:hover { text-decoration: underline; }
 
-/* メインコンテンツ：サイドバーの右側に配置 */
+/* メインコンテンツ */
 .main {
-  margin-left: 200px;
   padding: 10px;
-  border: 2px solid #6096fa;  
+  border: 2px solid #6096fa;
   border-radius: 8px;
   max-width: 900px;
-  margin: 100px auto 50px 220px;
+  margin: 0 auto 50px; /* ナビと詰めて表示 */
 }
+
+/* ナビが重なる場合に備えて、ナビ直下の main 領域を調整するショートカット */
+.top-nav + .main { margin-top: 0; }
 
 h1, h2, h3 {
   color: #333;
@@ -76,6 +83,14 @@ h2.title {
   background-color: transparent;
   border-left: none;
 }
+p {
+  margin-bottom: 20px;
+}
+
+h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
 
 ul {
   list-style-type: none;
@@ -90,7 +105,103 @@ a {
 a:hover {
   text-decoration: underline;
 }
+/* 既存の .c-form スタイルがある前提。
+   追加：フォームコンテナ（影・余白）、完了メッセージの色 */
+.form-container {
+  max-width: 900px;
+  margin: 18px auto 40px;
+  background: #fff;
+  padding: 14px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+  border: 1px solid rgba(96,150,250,0.08);
+}
+.c-form {
+	max-width: 600px;
+	margin: 0 auto;
+}
+.c-form__item {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	margin-bottom: 20px;
+}
+.c-form__label,
+.c-form__input {
+	padding: 10px;
+}
+.c-form__label {
+	width: 90%;
+}
+.c-form__input {
+	width: 90%;
+	font-size: 16px;
+	border: solid 1px #333;
+	border-radius: 4px;
+}
+.c-form__input:focus-visible {
+	outline: green auto 1px;
+}
+.c-form__required {
+	color: #fff;
+	background-color: green;
+	border-radius: 4px;
+	padding: 5px 5px;
+	margin: 0 0 0 18px;
+}
+textarea.c-form__input {
+	height: 160px;
+}
+.c-form__submit {
+	text-align: center;
+}
+.c-form__submit button {
+	font-size: 18px;
+	font-weight: bold;
+	color: #fff;
+	background-color: green;
+	border: solid 1px green;
+	border-radius: 4px;
+	padding: 5px 32px;
+	transition: 0.4s;
+	cursor: pointer;
+}
+.c-form__submit button:hover {
+	color: green;
+	background-color: transparent;
+}
 
+@media (min-width: 640px) {
+	.c-form__item {
+		flex-wrap: nowrap;
+	}
+	.c-form__label {
+		width: 40%;
+	}
+	.c-form__input {
+		width: 55%;
+	}
+}
+#form-result { color: #2b8a3e; font-weight: 700; }
+
+/* フォーム埋め込み用コンテナ */
+.form-container {
+  max-width: 900px;
+  margin: 18px auto 40px;
+  background: #fff;
+  padding: 14px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+  border: 1px solid rgba(96,150,250,0.08);
+}
+.form-container iframe {
+  width: 100%;
+  border: 0;
+  min-height: 600px; /* 必要に応じて高さを調整してください */
+}
+@media (max-width: 480px) {
+  .form-container iframe { min-height: 720px; }
+}
 /* Googleカレンダー（iframe）をコンテナ幅にフィットさせる */
 .main iframe {
   display: block;  /*親要素（.main）の幅に沿って配置されるようにする。*/
@@ -106,34 +217,13 @@ a:hover {
 
 /* タブレット以下（768px以下） */
 @media screen and (max-width: 768px) {
-  .sidebar {
-    position: sticky; /* スクロールしても上部に張り付く */
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000; /* コンテンツの下に潜らないように */
-  }
-  /* メインコンテンツ：サイドバーの右側に配置 */
-.main {
-  padding: 10px;
-  border: 2px solid #6096fa;  
-  border-radius: 8px;
-  max-width: 900px;
-  /* 左の余白（サイドバー用）をゼロにして中央寄せ */
-  margin: 16px auto;
-}
-
+  .top-nav ul { flex-wrap: wrap; gap: 12px; padding: 10px; }
+  .main { margin: 64px auto 24px; padding: 10px; }
 }
 
 /* スマホ（480px以下） */
 @media screen and (max-width: 480px) {
-  /* モバイル時のみリンク文字サイズと余白を縮小 */
-  .sidebar a { font-size: 0.75rem; padding: 4px 6px; }
-}
-.sidebar a {
-  color: #ffffff;
-}
-.sidebar a:hover {
-  color: #f0f0f0;
-  text-decoration: underline;
+  .top-nav ul { flex-direction: column; gap: 6px; align-items: center; }
+  .top-nav a { font-size: 0.85rem; padding: 6px 8px; }
+  .main { margin: 72px 10px 24px; }
 }
