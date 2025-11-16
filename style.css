@@ -91,10 +91,9 @@ h2.title {
   display: flex; 
   gap: 40px; 
   align-items: flex-start; 
-  margin-top: 10px; 
+  margin-top: 5px; 
   flex-wrap: nowrap;
   /* 背景画像: images/hero-music.jpg を配置 */
-  color: #fffaf0; /* 見出し／メインテキストの色 */
   background: url("images/hero-music.jpg") center top/cover no-repeat;
   position: relative; /* overlay 用に相対位置を確保 */
   padding: 36px 38px 28px;
@@ -106,7 +105,7 @@ h2.title {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: rgba(255,255,255,0.7); /* 透明度を調整（0.0〜1.0） */
+  background-color: rgba(255,255,255,0.8); /* 透明度を調整（0.0〜1.0） */
   pointer-events: none;
   z-index: 0;
 }
@@ -152,6 +151,18 @@ h2.title {
 
 .firstview-right { flex: 1; }
 .firstview-right h2 { margin: 0 0 8px; }
+
+/* H3直後のリスト余白圧縮 */
+.firstview-right h3 + ul { margin-top: 0; }
+.highlight-list li {
+  font-size: 1.15em;
+  margin-bottom: 8px;
+  color: #0e0af1;
+}
+.highlight-list li strong {
+  color: #3407fa; /* 赤色強調 */
+}
+
 @media (max-width: 900px) {
   .firstview { flex-direction: column; gap: 24px; }
 }
@@ -160,8 +171,8 @@ p {
 }
 
 h3 {
-  margin-top: 20px;
-  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
 ul {
