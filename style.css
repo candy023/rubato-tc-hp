@@ -5,7 +5,9 @@ body {
   padding: 0;
   background: #fafafa;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 /* ページ上部ナビ（トップナビ） */
 .top-nav {
   width: 100%;
@@ -31,11 +33,12 @@ body {
 
 /* メインコンテンツ */
 .main {
-  padding: 10px;
+  padding: 10px 22px;
   border: 2px solid #6096fa;
   border-radius: 8px;
-  max-width: 900px;
+  max-width: 1180px; /* PCで横幅を広げる */
   margin: 0 auto 50px; /* ナビと詰めて表示 */
+  background: #ffffff;
 }
 
 /* ナビが重なる場合に備えて、ナビ直下の main 領域を調整するショートカット */
@@ -67,7 +70,6 @@ h1.main_title::after {
   content: "🎾";
   margin-left: 8px;
 }
-
 /* h2見出しに背景色を追加 */
 h2 {
   background-color: #e3f2fd;  
@@ -82,6 +84,76 @@ h2 {
 h2.title {
   background-color: transparent;
   border-left: none;
+}
+
+/* 紹介2カラムレイアウト */
+.firstview { 
+  display: flex; 
+  gap: 40px; 
+  align-items: flex-start; 
+  margin-top: 10px; 
+  flex-wrap: nowrap;
+  /* 背景画像: images/hero-music.jpg を配置 */
+  color: #fffaf0; /* 見出し／メインテキストの色 */
+  background: url("images/hero-music.jpg") center top/cover no-repeat;
+  position: relative; /* overlay 用に相対位置を確保 */
+  padding: 36px 38px 28px;
+  border-radius: 12px;
+
+}
+/* 背景を薄くするオーバーレイ（白で洗いをかける） */
+.firstview::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255,255,255,0.7); /* 透明度を調整（0.0〜1.0） */
+  pointer-events: none;
+  z-index: 0;
+}
+.firstview > * { position: relative; z-index: 1; }
+
+.firstview h2.title { 
+  color: #1a0bf0;
+  position: relative;
+ }
+/* h2.title の上下にミニテニス画像を並べる */
+.firstview h2.title::before,
+.firstview h2.title::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 28px; /* 画像の高さに合わせ調整 */
+  background-image: url("images/teniMINI.png");
+  background-repeat: repeat-x;
+  background-position: center center;
+  background-size: 26px 26px; /* 1つのアイコンのサイズ */
+}
+
+.firstview p { 
+  color: #111011; 
+  opacity: 0.95; 
+}
+.cta { background:
+   #6096fa; 
+   color: #fff; 
+   border-radius:6px; 
+   padding: 10px 18px; 
+  }
+.firstview-left {
+  background-color: #fafafa;
+   align-items: center;   /* ←縦中央配置 */
+  justify-content: center; /* ←横中央（必要なら） */
+  padding: 0; /* 内側余白を消す（画像が縮む原因） */
+  width: 100%;
+  aspect-ratio: 4 / 3; /* ←画像の縦横比を指定 */
+  border-radius: 8px;
+  flex: 1; 
+}
+
+.firstview-right { flex: 1; }
+.firstview-right h2 { margin: 0 0 8px; }
+@media (max-width: 900px) {
+  .firstview { flex-direction: column; gap: 24px; }
 }
 p {
   margin-bottom: 20px;
@@ -105,71 +177,7 @@ a {
 a:hover {
   text-decoration: underline;
 }
-/* 既存の .c-form スタイルがある前提。
-   追加：フォームコンテナ（影・余白）、完了メッセージの色 */
-.form-container {
-  max-width: 900px;
-  margin: 18px auto 40px;
-  background: #fff;
-  padding: 14px;
-  border-radius: 8px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.06);
-  border: 1px solid rgba(96,150,250,0.08);
-}
-.c-form {
-	max-width: 600px;
-	margin: 0 auto;
-}
-.c-form__item {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
-	margin-bottom: 20px;
-}
-.c-form__label,
-.c-form__input {
-	padding: 10px;
-}
-.c-form__label {
-	width: 90%;
-}
-.c-form__input {
-	width: 90%;
-	font-size: 16px;
-	border: solid 1px #333;
-	border-radius: 4px;
-}
-.c-form__input:focus-visible {
-	outline: green auto 1px;
-}
-.c-form__required {
-	color: #fff;
-	background-color: green;
-	border-radius: 4px;
-	padding: 5px 5px;
-	margin: 0 0 0 18px;
-}
-textarea.c-form__input {
-	height: 160px;
-}
-.c-form__submit {
-	text-align: center;
-}
-.c-form__submit button {
-	font-size: 18px;
-	font-weight: bold;
-	color: #fff;
-	background-color: green;
-	border: solid 1px green;
-	border-radius: 4px;
-	padding: 5px 32px;
-	transition: 0.4s;
-	cursor: pointer;
-}
-.c-form__submit button:hover {
-	color: green;
-	background-color: transparent;
-}
+
 
 @media (min-width: 640px) {
 	.c-form__item {
@@ -182,7 +190,6 @@ textarea.c-form__input {
 		width: 55%;
 	}
 }
-#form-result { color: #2b8a3e; font-weight: 700; }
 
 /* フォーム埋め込み用コンテナ */
 .form-container {
@@ -219,6 +226,7 @@ textarea.c-form__input {
 @media screen and (max-width: 768px) {
   .top-nav ul { flex-wrap: wrap; gap: 12px; padding: 10px; }
   .main { margin: 64px auto 24px; padding: 10px; }
+  .firstview { flex-direction: column; gap: 24px; }
 }
 
 /* スマホ（480px以下） */
