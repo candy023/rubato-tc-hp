@@ -200,7 +200,42 @@ a:hover {
   text-decoration: underline;
 }
 
+/* カレンダーカード表示用スタイル */
+#calendar-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
+.calendar-card {
+  padding: 16px;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.calendar-card h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.calendar-card .date {
+  margin: 8px 0 4px;
+  font-weight: 600;
+  color: #555;
+}
+
+.calendar-card .time {
+  font-size: 0.9rem;
+  color: #777;
+}
 
 /* フォーム埋め込み用コンテナ */
 .form-container {
