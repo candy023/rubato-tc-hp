@@ -236,7 +236,26 @@ a:hover {
   font-size: 0.9rem;
   color: #777;
 }
-
+/* CTAボタンカードとカレンダーの間 */
+.cta-calendar {
+  display: block;           /* ブロックにして margin:auto で中央寄せ */
+  width: max-content;       /* コンテンツ幅に合わせる */
+  margin: 18px auto;       /* 上下余白 + 左右中央 */
+  background: #cc690c;
+  color: white;
+  padding: 12px 26px;
+  font-size: 18px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 6px 14px rgba(204,105,12,0.12);
+  transition: transform 0.12s ease, opacity 0.12s ease;
+}
+.cta-calendar:hover {
+  opacity: 0.92;
+  transform: translateY(-2px);
+}
 /* フォーム埋め込み用コンテナ */
 .form-container {
   max-width: 900px;
@@ -261,26 +280,53 @@ a:hover {
   height: auto;       /* 幅に合わせて高さも調整 */
 }
 
-.footer-cta {
-  text-align: center;
-  margin: 50px 0 30px;
+/* 料金・持ち物セクションの見やすさ向上 */
+.price-box {
+  background: #f8fbff; /* わずかに青みのある明るい背景 */
+  border: 1px solid rgba(96,150,250,0.12);
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(13,42,90,0.04);
+  margin: 18px 0 28px;
+  line-height: 1.5;
 }
 
-.cta-bottom {
+.price-box p { margin: 6px 0; }
+
+/* 金額の強調 */
+.price-box p strong {
   display: inline-block;
-  background: #ff9800;
-  color: #fff;
-  font-weight: bold;
-  padding: 16px 32px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-size: 20px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
-.cta-bottom:hover {
-  opacity: 0.9;
+  background: #ffffff;
+  color: #cc690c;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 1.08rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
 }
 
+.price-box h3 {
+  margin-top: 12px;
+  margin-bottom: 8px;
+  font-size: 1.03rem;
+  color: #506ac5;
+}
+
+/* 持ち物リストをカード風にして視認性を向上 */
+.price-box ul {
+   display: flex; 
+    gap: 12px;
+    flex-wrap: wrap;
+    
+}
+.price-box li {
+  list-style: none;
+  background: #ffffff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(9,15,32,0.04);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+  font-size: 0.98rem;
+}
 /* ========================================
    Responsive Media Queries (large → small)
    Breakpoints:
@@ -322,4 +368,11 @@ a:hover {
   background: #e3f2fd;
   color: #1a73e8;
   text-decoration: none;
+}
+
+
+
+@media screen and (max-width: 600px) {
+  .price-box ul { flex-direction: column; }
+  .price-box li { width: 100%; }
 }
