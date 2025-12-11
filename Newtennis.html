@@ -178,15 +178,83 @@
       </div>
     </section>
 
-    <section id="contact" style="margin-top:18px">
-      <div class="card">
-        <h2>無料体験・お問い合わせ</h2>
-        <p class="small">参加希望日・お名前・連絡先を入力して送信してください。折返し運営よりご連絡します。</p>
-        <div class="form-embed" style="margin-top:12px">
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc6QjNbR50dVsyK6NBGZRzTNYS_NW59P-pwt_tLl56JxcV9-A/viewform?embedded=true" style="width:100%;height:560px;border:0" title="お問い合わせフォーム"></iframe>
-        </div>
+<section id="contact" class="contact-section" style="margin-top:18px;">
+  <div class="card" style="padding:32px;">
+    <h2>無料体験・お問い合わせ</h2>
+    <p class="small">以下の項目をご記入ください。</p>
+
+    <form id="contactForm" style="margin-top:20px; display:flex; flex-direction:column; gap:16px;">
+
+      <!-- メールアドレス -->
+      <div class="form-group" style="display:flex; flex-direction:column; gap:6px;">
+        <label style="font-weight:600;">メールアドレス *</label>
+        <input type="email" name="email" required
+               style="padding:12px; border-radius:10px; border:1px solid #dbe3ef; background:#fff;">
       </div>
-    </section>
+
+      <!-- 名前 -->
+      <div class="form-group" style="display:flex; flex-direction:column; gap:6px;">
+        <label style="font-weight:600;">お名前 *</label>
+        <input type="text" name="name" required
+               style="padding:12px; border-radius:10px; border:1px solid #dbe3ef; background:#fff;">
+      </div>
+
+      <!-- 年齢 -->
+      <div class="form-group" style="display:flex; flex-direction:column; gap:6px;">
+        <label style="font-weight:600;">年齢（20代など） *</label>
+        <input type="text" name="age" required
+               style="padding:12px; border-radius:10px; border:1px solid #dbe3ef; background:#fff;">
+      </div>
+
+      <!-- 体験希望日 -->
+      <div class="form-group" style="display:flex; flex-direction:column; gap:6px;">
+        <label style="font-weight:600;">体験希望日 *</label>
+        <input type="date" name="date" required
+               style="padding:12px; border-radius:10px; border:1px solid #dbe3ef; background:#fff;">
+      </div>
+
+      <!-- 質問の形式（セレクト） -->
+      <div class="form-group" style="display:flex; flex-direction:column; gap:6px;">
+        <label style="font-weight:600;">質問の形式 </label>
+        <select name="questionType" 
+                style="padding:12px; border-radius:10px; border:1px solid #dbe3ef; background:#fff;">
+          <option value="">選択してください</option>
+          <option value="体験参加について">体験参加について</option>
+          <option value="活動内容について">活動内容について</option>
+          <option value="料金について">料金について</option>
+          <option value="その他">その他</option>
+        </select>
+      </div>
+
+      <!-- テニス歴 -->
+      <div class="form-group" style="display:flex; flex-direction:column; gap:6px;">
+        <label style="font-weight:600;">テニス歴 *</label>
+        <input type="text" name="tennisHistory" required
+               style="padding:12px; border-radius:10px; border:1px solid #dbe3ef; background:#fff;"
+               placeholder="例：初心者 / 半年 / 5年 など">
+      </div>
+
+      <!-- その他（自由記述） -->
+      <div class="form-group" style="display:flex; flex-direction:column; gap:6px;">
+        <label style="font-weight:600;">その他（ご質問やメッセージ）</label>
+        <textarea name="other" rows="4"
+                  style="padding:12px; border-radius:10px; border:1px solid #dbe3ef; background:#fff;"></textarea>
+      </div>
+
+      <!-- 送信ボタン -->
+      <button type="submit"
+              class="btn-submit"
+              style="padding:14px 20px; background:var(--accent); color:#fff; font-weight:700; border-radius:999px; border:none; cursor:pointer; box-shadow:0 12px 30px rgba(255,107,74,0.14);">
+        送信する
+      </button>
+
+      <p id="formStatus" style="margin-top:10px; font-weight:700;"></p>
+    </form>
+  </div>
+</section>
+
+
+
 
   </main>
 
@@ -211,6 +279,6 @@
       if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
     });
   </script>
-</body>
+<script src="form.js"></script></body>
 </html>
 
