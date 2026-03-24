@@ -116,7 +116,7 @@
       </div>
     </section>
 
-    <!-- gallery -->
+    <!-- gallery
     <section style="margin-top:18px">
       <div class="card">
         <h2>ギャラリー</h2>
@@ -127,7 +127,7 @@
         </div>
       </div>
     </section>
-
+ -->
     <!-- schedule & map -->
     <section style="margin-top:18px">
       <div class="card embed-wrap" id="schedule">
@@ -214,6 +214,21 @@
       </div>
 
       <!-- 質問の形式（セレクト） -->
+      <!-- テニス歴（セレクト） -->
+      <div class="form-group" style="display:flex; flex-direction:column; gap:6px;">
+        <label style="font-weight:600;">テニス歴 *</label>
+        <select name="tennisHistory" required
+                style="padding:12px; border-radius:10px; border:1px solid #dbe3ef; background:#fff;">
+          <option value="">選択してください</option>
+          <option value="1年未満">1年未満</option>
+          <option value="1～3年">1～3年</option>
+          <option value="3～5年">3～5年</option>
+          <option value="5～10年">5～10年</option>
+          <option value="10年以上">10年以上</option>
+        </select>
+      </div>
+
+      <!-- 質問の形式（セレクト） -->
       <div class="form-group" style="display:flex; flex-direction:column; gap:6px;">
         <label style="font-weight:600;">質問の形式 </label>
         <select name="questionType" 
@@ -224,14 +239,6 @@
           <option value="料金について">料金について</option>
           <option value="その他">その他</option>
         </select>
-      </div>
-
-      <!-- テニス歴 -->
-      <div class="form-group" style="display:flex; flex-direction:column; gap:6px;">
-        <label style="font-weight:600;">テニス歴 *</label>
-        <input type="text" name="tennisHistory" required
-               style="padding:12px; border-radius:10px; border:1px solid #dbe3ef; background:#fff;"
-               placeholder="例：初心者 / 半年 / 5年 など">
       </div>
 
       <!-- その他（自由記述） -->
