@@ -1,281 +1,399 @@
-<!-- From -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ルバートテニスクラブ | 会津若松</title>
-  <meta name="description" content="会津若松の地域密着テニスクラブ。初心者歓迎・週2回の安定活動・体験申込受付中。" />
-  <meta property="og:title" content="ルバートテニスクラブ｜会津若松" />
-  <meta property="og:description" content="自由なテンポでテニスを楽しむ。初心者〜上級者歓迎。会津総合運動公園で活動。無料体験受付中。" />
+  <title>Rubato Tennis Club | 会津若松</title>
+  <meta name="description" content="会津若松で活動する経験者向けテニスクラブ。初中級以上を対象に、ラリー・ゲーム練習を中心に活動しています。競技者も在籍しています。" />
+  <meta property="og:title" content="Rubato Tennis Club | 会津若松" />
+  <meta property="og:description" content="初中級以上の経験者が継続して打てるテニスクラブ。ラリー・ゲーム練習中心、競技者も在籍。" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://candy023.github.io/rubato-tc-hp/assets/og-image.jpg" />
+  <meta property="og:image" content="https://candy023.github.io/rubato-tc-hp/images/14421.jpg" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#f7fbff; --card:#ffffffee; --brand:#0b84ff; --accent:#ff6b4a; --muted:#6b7280; --glass:rgba(255,255,255,0.65);
-      --radius:16px; --shadow:0 10px 30px rgba(12,18,25,0.07);
+      --bg:#f6f9fc;
+      --card:#ffffff;
+      --brand:#0b84ff;
+      --brand-dark:#0757a8;
+      --accent:#ff6b4a;
+      --ink:#0f172a;
+      --muted:#64748b;
+      --line:#e5edf6;
+      --radius:16px;
+      --shadow:0 10px 30px rgba(12,18,25,0.08);
     }
     *{box-sizing:border-box}
-    html,body{height:100%;}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial; background:var(--bg); color:#0f172a; -webkit-font-smoothing:antialiased;}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+      background:var(--bg);
+      color:var(--ink);
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:inherit;text-decoration:none}
+    p{line-height:1.75}
 
-    /* layout */
-    header.site-hero{position:relative; min-height:60vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:56px 20px; background:linear-gradient(180deg, rgba(11,132,255,0.95), rgba(106,199,255,0.85)); color:#fff; overflow:hidden}
-    header.site-hero .container{max-width:1100px; margin:0 auto; position:relative; z-index:2}
-    .hero-eyebrow{display:inline-block;background:rgba(255,255,255,0.15);padding:6px 12px;border-radius:999px;font-weight:600;margin-bottom:12px}
-    h1{font-size:clamp(28px,4.5vw,44px);margin:0 0 12px;line-height:1.05}
-    p.lead{margin:0 auto 18px;max-width:760px;opacity:0.95}
-
-    .cta-row{display:flex;gap:14px; justify-content:center; flex-wrap:wrap}
-    .btn{display:inline-block;padding:12px 20px;border-radius:999px;font-weight:700;cursor:pointer}
-    .btn-primary{background:var(--accent); color:#fff; box-shadow:0 12px 30px rgba(255,107,74,0.14)}
-    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.18); color:#fff}
-
-    /* top nav small */
-    nav.topbar{position:fixed;top:18px;left:50%;transform:translateX(-50%);width:calc(100% - 40px);max-width:1100px;display:flex;justify-content:space-between;align-items:center;padding:8px 12px;z-index:40}
+    nav.topbar{
+      position:fixed;
+      top:18px;
+      left:50%;
+      transform:translateX(-50%);
+      width:calc(100% - 40px);
+      max-width:1100px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:8px 12px;
+      z-index:40;
+    }
     .brand{display:flex;gap:10px;align-items:center}
-    .brand .logo{width:44px;height:44px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--brand);font-weight:700}
+    .brand .logo{
+      width:44px;
+      height:44px;
+      border-radius:10px;
+      background:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--brand);
+      font-weight:800;
+      box-shadow:0 8px 22px rgba(15,23,42,0.08);
+    }
+    .brand-name{color:#fff;font-weight:800;text-shadow:0 1px 10px rgba(15,23,42,0.24)}
     .nav-links{display:flex;gap:12px}
-    .nav-links a{color:#0f172a;font-weight:600;padding:8px 10px;border-radius:8px;background:rgba(255,255,255,0.7);backdrop-filter:blur(8px);}
+    .nav-links a{
+      color:var(--ink);
+      font-weight:700;
+      padding:8px 10px;
+      border-radius:8px;
+      background:rgba(255,255,255,0.82);
+      backdrop-filter:blur(8px);
+    }
 
-    main.container{max-width:1100px;margin:40px auto;padding:0 20px;}
-    .grid{display:grid;gap:24px}
+    header.site-hero{
+      position:relative;
+      min-height:68vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:92px 20px 76px;
+      background:
+        linear-gradient(180deg, rgba(7,87,168,0.88), rgba(11,132,255,0.84)),
+        url("images/14421.jpg") left center/cover no-repeat;
+      color:#fff;
+      overflow:hidden;
+    }
+    header.site-hero .container{
+      max-width:1100px;
+      margin:0 auto;
+      position:relative;
+      z-index:2;
+    }
+    .hero-eyebrow{
+      display:inline-block;
+      background:rgba(255,255,255,0.16);
+      padding:6px 12px;
+      border-radius:999px;
+      font-weight:700;
+      margin-bottom:14px;
+    }
+    h1{
+      font-size:clamp(30px,4.8vw,52px);
+      margin:0 0 14px;
+      line-height:1.12;
+      letter-spacing:0;
+    }
+    h2{margin:0 0 12px;font-size:1.45rem}
+    h3{margin:12px 0 8px;font-size:1.08rem}
+    .lead{
+      margin:0 auto 22px;
+      max-width:790px;
+      opacity:0.96;
+      font-size:1.04rem;
+    }
+    .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:46px;
+      padding:12px 20px;
+      border-radius:999px;
+      font-weight:800;
+      cursor:pointer;
+    }
+    .btn-primary{background:var(--accent);color:#fff;box-shadow:0 12px 30px rgba(255,107,74,0.18)}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.36);color:#fff}
 
-    /* feature cards */
-    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:-40px}
-    .card{background:var(--card);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
-    .pill{display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border-radius:999px;background:#f8fafc;font-weight:600;color:var(--muted)}
+    main.container{max-width:1100px;margin:40px auto;padding:0 20px}
+    .features{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:18px;
+      margin-top:-58px;
+      position:relative;
+      z-index:3;
+    }
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 12px;
+      border-radius:999px;
+      background:#f8fafc;
+      font-weight:700;
+      color:var(--muted);
+    }
+    .small{color:var(--muted);font-size:0.96rem;margin:0}
+    .note{margin-top:12px;color:#ef4444;font-weight:700}
 
-    /* gallery */
-    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-    .gallery img{width:100%;height:220px;object-fit:cover;border-radius:12px;display:block}
-
-    /* schedule & map */
     .embed-wrap{display:grid;grid-template-columns:1fr 360px;gap:20px}
     iframe.responsive{width:100%;height:420px;border:0;border-radius:12px}
 
-    /* pricing and faq */
     .pricing{display:flex;gap:18px;flex-wrap:wrap}
-    .price-box{flex:1;min-width:220px;background:linear-gradient(180deg,#fff,#fff);padding:22px;border-radius:12px;border:1px solid #eef6ff}
-    .price-amount{font-size:1.6rem;font-weight:800}
+    .price-box{
+      flex:1;
+      min-width:220px;
+      background:#fff;
+      padding:22px;
+      border-radius:12px;
+      border:1px solid var(--line);
+    }
+    .price-label{color:var(--muted);font-weight:800}
+    .price-amount{font-size:1.6rem;font-weight:800;margin:4px 0 8px}
 
-    /* contact */
-    .form-embed{border-radius:12px;overflow:hidden;border:1px solid #eef2ff}
+    .two-column{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+      align-items:start;
+    }
+    .stack{display:flex;flex-direction:column;gap:18px}
+    .form-grid{margin-top:20px;display:flex;flex-direction:column;gap:16px}
+    .form-group{display:flex;flex-direction:column;gap:6px}
+    label{font-weight:700}
+    input,select,textarea{
+      width:100%;
+      padding:12px;
+      border-radius:10px;
+      border:1px solid #dbe3ef;
+      background:#fff;
+      font:inherit;
+    }
+    textarea{resize:vertical}
+    .btn-submit{
+      padding:14px 20px;
+      background:var(--accent);
+      color:#fff;
+      font-weight:800;
+      border-radius:999px;
+      border:none;
+      cursor:pointer;
+      box-shadow:0 12px 30px rgba(255,107,74,0.14);
+    }
 
-    /* sticky CTA */
-    .sticky-cta{position:fixed;right:18px;bottom:18px;background:var(--accent);color:#fff;padding:12px 18px;border-radius:999px;box-shadow:0 18px 40px rgba(11,132,255,0.14);z-index:60;font-weight:700}
-
+    .sticky-cta{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      background:var(--accent);
+      color:#fff;
+      padding:12px 18px;
+      border-radius:999px;
+      box-shadow:0 18px 40px rgba(11,132,255,0.14);
+      z-index:60;
+      font-weight:800;
+    }
     footer{padding:48px 20px;text-align:center;color:var(--muted);font-size:0.95rem}
 
-    @media(max-width:900px){.embed-wrap{grid-template-columns:1fr} .gallery{grid-template-columns:repeat(2,1fr)} .hero{padding:110px 16px}}
-    @media(max-width:560px){.gallery{grid-template-columns:1fr} nav.topbar{display:none}}
+    @media(max-width:900px){
+      .embed-wrap,.two-column{grid-template-columns:1fr}
+      header.site-hero{min-height:64vh}
+    }
+    @media(max-width:560px){
+      nav.topbar{display:none}
+      header.site-hero{padding:68px 16px 72px;text-align:left}
+      .cta-row{justify-content:flex-start}
+      .features{margin-top:-44px}
+      .sticky-cta{left:16px;right:16px;text-align:center}
+    }
   </style>
 </head>
 <body>
-  <nav class="topbar" aria-label="トップナビ">
-    <div class="brand"><div class="logo">R</div><div style="color:#fff;font-weight:700">Rubato</div></div>
+  <nav class="topbar" aria-label="トップナビゲーション">
+    <div class="brand">
+      <div class="logo">R</div>
+      <div class="brand-name">Rubato</div>
+    </div>
     <div class="nav-links">
       <a href="#about">概要</a>
-      <a href="#schedule">スケジュール</a>
+      <a href="#schedule">活動日程</a>
       <a href="#pricing">料金</a>
-      <a href="#contact">体験申込</a>
+      <a href="#contact">参加相談</a>
     </div>
   </nav>
 
   <header class="site-hero" role="banner">
     <div class="container">
-      <div class="hero-eyebrow">会津若松・地域密着</div>
-      <h1>自由なテンポで、テニスがもっと楽しくなる。</h1>
-      <p class="lead">初心者歓迎・経験者には実戦向けプログラム。会津総合運動公園を拠点に週2回、気軽に参加できるテニスクラブです。</p>
+      <div class="hero-eyebrow">会津若松・経験者向け</div>
+      <h1>会津若松で、経験者がしっかり打てるテニスクラブ</h1>
+      <p class="lead">初中級以上を対象に、ラリー・ゲーム練習を中心に活動しています。試合に出ているメンバーも在籍しており、継続してテニスを楽しみたい方に向いた環境です。</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="#contact">無料体験を申し込む</a>
-        <a class="btn btn-ghost" href="#pricing">料金を見る</a>
+        <a class="btn btn-primary" href="#contact">練習参加を相談する</a>
+        <a class="btn btn-ghost" href="#schedule">活動日程を見る</a>
       </div>
     </div>
   </header>
 
   <main class="container" id="about">
-    <!-- features -->
-    <section class="features">
+    <section class="features" aria-label="Rubato Tennis Clubの特徴">
       <div class="card">
-        <div class="pill">初心者歓迎</div>
-        <h3 style="margin-top:12px">レベル別の丁寧な指導</h3>
-        <p class="small">ラリー練習・サーブ・フォーム改善など、段階的に学べます。</p>
+        <div class="pill">初中級以上</div>
+        <h3>経験者が入りやすい活動内容</h3>
+        <p class="small">基本的なラリーができる方を対象に、打つ量とゲーム感を大切にした練習を行っています。</p>
       </div>
       <div class="card">
-        <div class="pill">週2回 活動</div>
-        <h3 style="margin-top:12px">無理なく続けられる頻度</h3>
-        <p class="small">平日夜と週末で活動。都合に合わせて参加できます。</p>
+        <div class="pill">練習中心</div>
+        <h3>ラリー・ゲーム練習が中心</h3>
+        <p class="small">ショートラリー、ストローク、ボレー、サーブからゲーム形式まで、実戦につながる内容を組み合わせています。</p>
       </div>
       <div class="card">
-        <div class="pill">会津総合運動公園</div>
-        <h3 style="margin-top:12px">アクセス良好な会場</h3>
-        <p class="small">屋根・設備が整ったコートで安全に練習できます。</p>
+        <div class="pill">競技者も在籍</div>
+        <h3>幅のあるメンバー構成</h3>
+        <p class="small">市民大会などに出ているメンバーも在籍しています。競技専門に寄りすぎず、経験者が継続しやすい雰囲気です。</p>
       </div>
     </section>
 
-    <!-- gallery
-    <section style="margin-top:18px">
-      <div class="card">
-        <h2>ギャラリー</h2>
-        <div class="gallery" aria-hidden="false">
-          <img src="assets/gallery1.jpg" alt="練習風景1 - ラリー練習の様子">
-          <img src="assets/gallery2.jpg" alt="練習風景2 - サーブ練習">
-          <img src="assets/gallery3.jpg" alt="練習風景3 - 交流大会の様子">
-        </div>
-      </div>
-    </section>
- -->
-    <!-- schedule & map -->
     <section style="margin-top:18px">
       <div class="card embed-wrap" id="schedule">
         <div>
           <h2>活動スケジュール</h2>
-          <p class="small">最新の練習日程は下のカレンダーで確認してください（雨天中止の案内あり）。</p>
+          <p class="small">最新の練習日程は下のカレンダーで確認できます。天候やコート状況により変更・中止となる場合があります。</p>
           <iframe class="responsive" src="https://calendar.google.com/calendar/embed?src=57e61de87be1ab2b04c0b7521b0dbedd97e2c06c08f706e944a8100b570d780e%40group.calendar.google.com&ctz=Asia%2FTokyo" title="活動カレンダー"></iframe>
         </div>
         <div>
-          <h2>会場（会津総合運動公園）</h2>
-          <p class="small">公共交通・お車でのアクセス情報は下の地図でご確認ください。</p>
-          <iframe class="responsive" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12705.106427514464!2d139.91676467819318!3d37.46516519801617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5ff55500001e91f9%3A0xa55c1a4bdeb1cb69!2z5Lya5rSl57eP5ZCI6YGL5YuV5YWs5ZyS44OG44OL44K544Kz44O844OI!5e0!3m2!1sja!2sjp!4v1764913349854!5m2!1sja!2sjp" title="会津総合運動公園の地図"></iframe>
+          <h2>会場</h2>
+          <p class="small">会津総合運動公園テニスコートを主な活動場所としています。公共交通機関や車でのアクセスは地図で確認してください。</p>
+          <iframe class="responsive" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12705.106427514464!2d139.91676467819318!3d37.46516519801617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5ff55500001e91f9%3A0xa55c1a4bdeb1cb69!2z5Lya5rSl57eP5ZCI6YGL5YuV5YWs5ZyS44OG44OL44K544Kz44O844OI!5e0!3m2!1sja!2sjp!4v1764913349854!5m2!1sja!2sjp" title="会津総合運動公園テニスコートの地図"></iframe>
         </div>
       </div>
     </section>
 
-    <!-- pricing / faq / contact -->
-    <section style="margin-top:18px; display:grid; grid-template-columns:1fr 1fr; gap:18px; align-items:start">
+    <section class="two-column">
       <div class="card" id="pricing">
         <h2>料金プラン</h2>
         <div class="pricing">
           <div class="price-box">
-            <div style="color:var(--muted);font-weight:700">年会費</div>
-            <div class="price-amount">12,000円 / 年</div>
-            <p class="small">会員は練習毎の参加費が不要。継続参加に向くプラン。</p>
+            <div class="price-label">年会費</div>
+            <div class="price-amount">13,000円 / 年</div>
+            <p class="small">会員は通常練習への参加費が不要です。継続して参加する方向けのプランです。</p>
           </div>
           <div class="price-box">
-            <div style="color:var(--muted);font-weight:700">スポット参加</div>
+            <div class="price-label">スポット参加</div>
             <div class="price-amount">600円 / 回</div>
-            <p class="small">年会費未加入の方の単発参加用。</p>
+            <p class="small">年会費未加入の方が単発で参加する場合の料金です。</p>
           </div>
         </div>
-        <p style="margin-top:12px;color:#ef4444;font-weight:600">※ 雨天時は基本中止となります。</p>
+        <p class="note">※ 雨天時は基本中止となります。</p>
       </div>
 
-      <div style="display:flex;flex-direction:column;gap:18px">
+      <div class="stack">
         <div class="card">
           <h2>よくある質問</h2>
-          <p class="small"><strong>Q:</strong> ラケットが無くても参加できますか？<br><strong>A:</strong> はい。貸しラケットを用意しています。</p>
-          <p class="small"><strong>Q:</strong> 初心者でも大丈夫？<br><strong>A:</strong> 経験に合わせたグループで練習します。</p>
+          <p class="small"><strong>Q:</strong> 参加目安はありますか？<br><strong>A:</strong> 基本的なラリーができる方を対象にしています。初中級以上で、ゲーム練習に参加できる方が目安です。</p>
+          <p class="small" style="margin-top:12px"><strong>Q:</strong> 競技志向でなくても参加できますか？<br><strong>A:</strong> はい。試合に出ているメンバーもいますが、競技専門ではありません。継続して練習したい経験者を歓迎しています。</p>
         </div>
 
         <div class="card">
           <h2>連絡先</h2>
-          <p class="small">公式LINE / メールで受付中</p>
-          <p class="small" style="font-weight:700">LINE: @rubato-tennis<br>メール: info@rubatotennis.example</p>
+          <p class="small">公式LINE / メールで受け付けています。</p>
+          <p class="small" style="font-weight:800;margin-top:8px">LINE: @rubato-tennis<br>メール: info@rubatotennis.example</p>
         </div>
       </div>
     </section>
 
-<section id="contact" class="contact-section" style="margin-top:18px;">
-  <div class="card" style="padding:32px;">
-    <h2>無料体験・お問い合わせ</h2>
-    <p class="small">以下の項目をご記入ください。</p>
+    <section id="contact" class="contact-section" style="margin-top:18px;">
+      <div class="card" style="padding:32px;">
+        <h2>練習参加・お問い合わせ</h2>
+        <p class="small">参加を希望される方は、以下の項目をご記入ください。テニス歴や参加希望日を確認したうえでご連絡します。</p>
 
-    <form id="contactForm" style="margin-top:20px; display:flex; flex-direction:column; gap:16px;">
+        <form id="contactForm" class="form-grid">
+          <div class="form-group">
+            <label for="email">メールアドレス *</label>
+            <input id="email" type="email" name="email" required>
+          </div>
 
-      <!-- メールアドレス -->
-      <div class="form-group" style="display:flex; flex-direction:column; gap:6px;">
-        <label style="font-weight:600;">メールアドレス *</label>
-        <input type="email" name="email" required
-               style="padding:12px; border-radius:10px; border:1px solid #dbe3ef; background:#fff;">
+          <div class="form-group">
+            <label for="name">お名前 *</label>
+            <input id="name" type="text" name="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="age">年齢（30代など） *</label>
+            <input id="age" type="text" name="age" required>
+          </div>
+
+          <div class="form-group">
+            <label for="date">参加希望日 *</label>
+            <input id="date" type="date" name="date" required>
+          </div>
+
+          <div class="form-group">
+            <label for="tennisHistory">テニス歴 *</label>
+            <select id="tennisHistory" name="tennisHistory" required>
+              <option value="">選択してください</option>
+              <option value="1〜3年">1〜3年</option>
+              <option value="3〜5年">3〜5年</option>
+              <option value="5〜10年">5〜10年</option>
+              <option value="10年以上">10年以上</option>
+              <option value="大会・試合参加経験あり">大会・試合参加経験あり</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="questionType">お問い合わせ内容</label>
+            <select id="questionType" name="questionType">
+              <option value="">選択してください</option>
+              <option value="練習参加について">練習参加について</option>
+              <option value="活動内容について">活動内容について</option>
+              <option value="料金について">料金について</option>
+              <option value="その他">その他</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="other">その他（ご質問やメッセージ）</label>
+            <textarea id="other" name="other" rows="4"></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">送信する</button>
+          <p id="formStatus" style="margin-top:10px;font-weight:800;"></p>
+        </form>
       </div>
-
-      <!-- 名前 -->
-      <div class="form-group" style="display:flex; flex-direction:column; gap:6px;">
-        <label style="font-weight:600;">お名前 *</label>
-        <input type="text" name="name" required
-               style="padding:12px; border-radius:10px; border:1px solid #dbe3ef; background:#fff;">
-      </div>
-
-      <!-- 年齢 -->
-      <div class="form-group" style="display:flex; flex-direction:column; gap:6px;">
-        <label style="font-weight:600;">年齢（20代など） *</label>
-        <input type="text" name="age" required
-               style="padding:12px; border-radius:10px; border:1px solid #dbe3ef; background:#fff;">
-      </div>
-
-      <!-- 体験希望日 -->
-      <div class="form-group" style="display:flex; flex-direction:column; gap:6px;">
-        <label style="font-weight:600;">体験希望日 *</label>
-        <input type="date" name="date" required
-               style="padding:12px; border-radius:10px; border:1px solid #dbe3ef; background:#fff;">
-      </div>
-
-      <!-- 質問の形式（セレクト） -->
-      <!-- テニス歴（セレクト） -->
-      <div class="form-group" style="display:flex; flex-direction:column; gap:6px;">
-        <label style="font-weight:600;">テニス歴 *</label>
-        <select name="tennisHistory" required
-                style="padding:12px; border-radius:10px; border:1px solid #dbe3ef; background:#fff;">
-          <option value="">選択してください</option>
-          <option value="1年未満">1年未満</option>
-          <option value="1～3年">1～3年</option>
-          <option value="3～5年">3～5年</option>
-          <option value="5～10年">5～10年</option>
-          <option value="10年以上">10年以上</option>
-        </select>
-      </div>
-
-      <!-- 質問の形式（セレクト） -->
-      <div class="form-group" style="display:flex; flex-direction:column; gap:6px;">
-        <label style="font-weight:600;">質問の形式 </label>
-        <select name="questionType" 
-                style="padding:12px; border-radius:10px; border:1px solid #dbe3ef; background:#fff;">
-          <option value="">選択してください</option>
-          <option value="体験参加について">体験参加について</option>
-          <option value="活動内容について">活動内容について</option>
-          <option value="料金について">料金について</option>
-          <option value="その他">その他</option>
-        </select>
-      </div>
-
-      <!-- その他（自由記述） -->
-      <div class="form-group" style="display:flex; flex-direction:column; gap:6px;">
-        <label style="font-weight:600;">その他（ご質問やメッセージ）</label>
-        <textarea name="other" rows="4"
-                  style="padding:12px; border-radius:10px; border:1px solid #dbe3ef; background:#fff;"></textarea>
-      </div>
-
-      <!-- 送信ボタン -->
-      <button type="submit"
-              class="btn-submit"
-              style="padding:14px 20px; background:var(--accent); color:#fff; font-weight:700; border-radius:999px; border:none; cursor:pointer; box-shadow:0 12px 30px rgba(255,107,74,0.14);">
-        送信する
-      </button>
-
-      <p id="formStatus" style="margin-top:10px; font-weight:700;"></p>
-    </form>
-  </div>
-</section>
-
-
-
-
+    </section>
   </main>
 
-  <a class="sticky-cta" href="#contact" aria-label="無料体験を申し込む">無料体験を申し込む</a>
+  <a class="sticky-cta" href="#contact" aria-label="練習参加を相談する">練習参加を相談する</a>
 
   <footer>
     <div style="max-width:900px;margin:0 auto;padding:0 20px">
-      <p>© 2025 Rubato Tennis Club — 会津若松市</p>
-      <p style="margin-top:8px;color:var(--muted);font-size:0.9rem">このサイトは練習予定の案内を目的としています。正確な場所・日時はカレンダーをご確認ください。</p>
+      <p>© 2026 Rubato Tennis Club - 会津若松市</p>
+      <p style="margin-top:8px;color:var(--muted);font-size:0.9rem">活動予定や会場は変更になる場合があります。正確な日時はカレンダーをご確認ください。</p>
     </div>
   </footer>
 
   <script>
-    // smooth scroll for internal links
     document.addEventListener('click', function(e){
       const a = e.target.closest('a[href^="#"]');
       if(!a) return;
@@ -286,6 +404,6 @@
       if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
     });
   </script>
-<script src="form.js"></script></body>
+  <script src="form.js"></script>
+</body>
 </html>
-
